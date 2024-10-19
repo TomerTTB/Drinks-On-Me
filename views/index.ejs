@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Get Your Drink</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Titan+One&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/styles/main.css">
+</head>
+<body>
+    <h1>Get Your Drink Recipe</h1>
+
+    <!-- Input form -->
+    <form id="drinkForm" action="/get-drink" method="POST">
+        <label for="drinkName">Please enter the drink name:</label>
+        <input id="drinkName" type="text" name="drinkName" placeholder="e.g., Mojito" required>
+        <input type="submit" value="Submit" formaction="/drink-by-name">
+    </form>
+
+    <!-- Area to display drink name and recipe -->
+    <div id="result">
+        <% if (locals.error) { %> 
+        <h2><%= error %> </h2>
+        <% } %> 
+
+        <% if (locals.drinkName) { %>
+        <h2>Drink Name:</h2>
+        <p> <%= drinkName %> </p>
+        <% } %>
+
+        <% if (locals.howToMake) { %> 
+        <h2>Recipe:</h2>
+        <p> <%= howToMake %> </p>
+        <% } %>
+    </div>
+</body>
+</html>

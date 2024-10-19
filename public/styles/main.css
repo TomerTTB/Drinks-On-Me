@@ -1,0 +1,136 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gloria Hallelujah', cursive;
+    background-color: #0c0c0c;
+    color: #fff;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+    border: 2px solid #00ffff;
+}
+
+h1 {
+    font-family: 'Titan One', cursive;
+    text-align: center;
+    color: #ff00ff;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    animation: neon-flicker 1.5s infinite alternate;
+}
+
+@keyframes neon-flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+/* Form styles */
+#drinkForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+label {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #00ffff;
+}
+
+input[type="text"] {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #0c0c0c;
+    color: #fff;
+}
+
+input[type="submit"] {
+    background-color: #ff00ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+input[type="submit"]:hover {
+    background-color: #00ffff;
+    box-shadow: 0 0 20px #00ffff;
+}
+
+/* Result styles */
+#result {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 30px auto 0;
+    border: 2px solid #ff00ff;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+    width: 100%;
+    max-width: 800px;
+}
+
+#result h2 {
+    color: #00ff00;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+#result p {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Image styles */
+.cocktail-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    border: 2px solid #00ffff;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    input[type="text"] {
+        max-width: 100%;
+    }
+}
